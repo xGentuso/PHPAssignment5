@@ -2,11 +2,11 @@
 
 ## Overview
 
-The **SportsPro Technical Support** suite comprises two main applications:
+The **SportsPro Technical Support** suite comprises three main applications:
 
 1. **Product Management**: Allows administrative users to manage products related to sports management software. Users can view, add, or delete products via a simple web interface.
-
 2. **Manage Technicians**: Enables administrative users to oversee technician details within the SportsPro Technical Support system. Admins can add, view, and delete technician records through a user-friendly web interface.
+3. **Manage Customers**: Enables administrative users to maintain and update customer details, improving service and interaction with the customer base.
 
 ## Table of Contents
 
@@ -19,6 +19,9 @@ The **SportsPro Technical Support** suite comprises two main applications:
   - [Manage Technicians](#manage-technicians)
     - [Technician List Page](#technician-list-page)
     - [Add Technician Page](#add-technician-page)
+  - [Manage Customers](#manage-customers)
+    - [Customer List Page](#customer-list-page)
+    - [Update Customer Page](#update-customer-page)
 - [Validation](#validation)
 - [Usage](#usage)
 - [Key Changes](#key-changes)
@@ -39,6 +42,11 @@ The **SportsPro Technical Support** suite comprises two main applications:
 - **Add Technicians**: Provide a form to input new technician details into the system with enhanced validation and password security.
 - **Delete Technicians**: Allow for the removal of technician records from the database.
 
+### Manage Customers
+
+- **View Customers**: Display a list of all customers with options to update or search for specific customer data.
+- **Update Customer**: Provide interfaces for updating existing customer information, ensuring data integrity and security.
+
 ## Operations
 
 ### Product Management
@@ -46,7 +54,7 @@ The **SportsPro Technical Support** suite comprises two main applications:
 #### Product List Page
 
 - **Delete Button**: Clicking this will remove the selected product from the database.
-- **Add Product Link**: Redirects to the `Add Product` page where new products can be added.
+- **Add Product Link**: Redirects to the Add Product page where new products can be added.
 - **Home Link**: Returns the user to the main menu.
 
 #### Add Product Page
@@ -59,7 +67,7 @@ The **SportsPro Technical Support** suite comprises two main applications:
 #### Technician List Page
 
 - **Delete Button**: Removes the specified technician from the database.
-- **Add Technician Link**: Directs to the `Add Technician` page for entering new technician data.
+- **Add Technician Link**: Directs to the Add Technician page for entering new technician data.
 
 #### Add Technician Page
 
@@ -67,16 +75,32 @@ The **SportsPro Technical Support** suite comprises two main applications:
 - **View Technician List Link**: Returns to the Technician List page.
 - **Password Security**: Passwords entered through this form are now securely hashed before being stored, ensuring no plain-text passwords are saved in the system.
 
+### Manage Customers
+
+#### Customer List Page
+
+- **Search Functionality**: Provides a form to search for customers by last name or other criteria.
+- **Select Button**: Allows admins to select a customer and proceed to the Update Customer page to edit information.
+
+#### Update Customer Page
+
+- **Update Customer Button**: Submits changes to the customer information to the database.
+- **Back Link**: Provides an option to return to the Customer List Page without making changes.
+
 ## Validation
 
 ### Product Management
 
-- **Form Validation**: Ensures that all required fields (product code, name, version, and release date) are entered on the `Add Product` page. An error page is displayed if any required fields are missing.
+- **Form Validation**: Ensures that all required fields (product code, name, version, and release date) are entered on the Add Product page. An error page is displayed if any required fields are missing.
 
 ### Manage Technicians
 
-- **Form Validation**: Ensures that all fields in the `Add Technician` form are filled out. If any required fields are missing, an error page is displayed indicating the omission.
+- **Form Validation**: Ensures that all fields in the Add Technician form are filled out. If any required fields are missing, an error page is displayed indicating the omission.
 - **Password Requirements**: Passwords must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character. If these criteria are not met, an error message is shown.
+
+### Manage Customers
+
+- **Form Validation**: Ensures that all required fields are correctly filled in the Update Customer form. An error message is displayed if any required information is missing or invalid.
 
 ## Usage
 
@@ -104,18 +128,25 @@ The **SportsPro Technical Support** suite comprises two main applications:
    - Submit the form using the **Add Technician Button** to add the technician to the database.
    - After submission, you'll be redirected to the Technician List page with the new technician included.
 
+### Manage Customers
+
+1. **View Customers**:
+   - Navigate to the Customer List page to search for and view details of customers.
+   - Use the **Select Button** to choose a customer to update.
+
+2. **Update Customers**:
+   - On the Update Customer page, edit the fields as required.
+   - Click the **Update Customer Button** to submit changes.
+   - You will be redirected back to the Customer List page with a success message confirming the update.
+
 ## Key Changes
 
-### Manage Technicians
-
 - **Password Hashing**:
-  - Technician passwords are now securely hashed using `password_hash()` before being stored in the database.
-  - This enhancement ensures that plain-text passwords are never stored, significantly improving security.
+  - Technician passwords are now securely hashed using `password_hash()` before being stored in the database. This enhancement ensures that plain-text passwords are never stored, significantly improving security.
 
 - **Improved Validation**:
   - Introduced both client-side and server-side validation for passwords.
-  - Passwords must now meet strict criteria: a minimum of 8 characters, including uppercase letters, lowercase letters, numbers, and special characters.
-  - This ensures that all technician accounts are secured with strong passwords.
+  - Passwords must now meet strict criteria: a minimum of 8 characters, including uppercase letters, lowercase letters, numbers, and special characters. This ensures that all technician accounts are secured with strong passwords.
 
 - **Error Handling**:
   - Enhanced error logging for easier debugging and maintenance.
@@ -146,4 +177,4 @@ The **SportsPro Technical Support** suite comprises two main applications:
 
 ---
 
-**Note**: This application is part of a project exercise from "SportsPro Technical Support"
+**Note**: This application is part of a project exercise from "SportsPro Technical Support".
